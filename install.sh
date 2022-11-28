@@ -49,19 +49,13 @@ if [[ $HOST_NAME == "" ]] || [[ $EMAIL_ADDR == "" ]] || [[ $LIST == "" ]] ; then
 fi
 
 echo '[10%  ] Start installation...'
-yum -q update -y  > /dev/null &
-wait
-yum install epel-release -y > /dev/null &
-wait
-yum repolist enabled > /dev/null &
-wait
-yum -q update --assumeno > /dev/null &
+apt update  > /dev/null &
 wait
 
-yum install iptables-services -y > /dev/null &
+apt install iptables-services -y > /dev/null &
 wait
 
-yum install ocserv certbot -y > /dev/null &
+apt install ocserv certbot -y > /dev/null &
 wait
 
 echo '[20%  ] Request a valid certificate...'
