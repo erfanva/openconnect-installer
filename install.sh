@@ -16,12 +16,6 @@ LIST=""
 HOST_NAME=""
 EMAIL_ADDR=""
 
-if [[ $(dnf -q check-update | wc -l) > 0 ]] ; then
-    echo 'You must be updated before this script.'
-    echo 'Run: yum update'
-    exit
-fi
-
 while [[ $1 != "" ]]; do
     case $1 in
         -f | --list )     shift
