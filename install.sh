@@ -43,13 +43,13 @@ if [[ $HOST_NAME == "" ]] || [[ $EMAIL_ADDR == "" ]] || [[ $LIST == "" ]] ; then
 fi
 
 echo '[10%  ] Start installation...'
-apt update  > /dev/null &
+apt-get update  > /dev/null &
 wait
 
-apt install iptables-services -y > /dev/null &
+apt-get install iptables-services -y > /dev/null &
 wait
 
-apt install ocserv certbot -y > /dev/null &
+apt-get install ocserv certbot -y > /dev/null &
 wait
 
 echo '[20%  ] Request a valid certificate...'
